@@ -1,0 +1,2 @@
+class SpanOfMonths
+end

@@ -1,0 +1,2 @@
+class SpanOfYears
+end

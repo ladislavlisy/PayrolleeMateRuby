@@ -1,0 +1,2 @@
+class SymbolName
+end
