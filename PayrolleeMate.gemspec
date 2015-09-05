@@ -6,11 +6,16 @@ require 'PayrolleeMate/version'
 Gem::Specification.new do |spec|
   spec.name          = "PayrolleeMate"
   spec.version       = PayrolleeMate::VERSION
-  spec.authors       = ["ladislavlisy"]
+  spec.authors       = ["Ladislav Lisy"]
   spec.email         = ["ladislav.lisy@seznam.cz"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.description   = %q{
+    Simple gem for calculation basic Czech Payroll
+  }
+  spec.summary       = %q{
+     There are included in this gem:
+     PayrolleeMate.Common
+  }
+  spec.homepage      = "https://github.com/ladislavlisy/PayrolleeMateRuby"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -20,4 +25,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "rspec-expectations"
 end

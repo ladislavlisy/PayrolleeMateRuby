@@ -1,5 +1,3 @@
 require "PayrolleeMate/version"
+require 'PayrolleeMate.Common/Periods/month_period'
 
-module PayrolleeMate
-  # Your code goes here...
-end
