@@ -38,7 +38,7 @@ module Payrollee_Common
         return @year_from<=>(other.year_from)
       end
 
-      @year_upto<=>(other.yearUpto)
+      @year_upto<=>(other.year_upto)
     end
 
     def >(other)

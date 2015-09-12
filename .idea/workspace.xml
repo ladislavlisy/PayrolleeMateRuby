@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d15a7338-1c90-4ca2-b2fd-0a8b6e060c5a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/Periods/span_of_years_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/PayrolleeMate.iml" afterPath="$PROJECT_DIR$/.idea/PayrolleeMate.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/PayrolleeMate.rb" afterPath="$PROJECT_DIR$/lib/PayrolleeMate.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/ladislavlisy.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/ladislavlisy.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/PayrolleeMate.Common/Periods/month_period.rb" afterPath="$PROJECT_DIR$/lib/PayrolleeMate.Common/Periods/month_period.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/Periods/month_period_spec.rb" afterPath="$PROJECT_DIR$/spec/Periods/month_period_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/PayrolleeMate.Common/Periods/seq_of_years.rb" afterPath="$PROJECT_DIR$/lib/PayrolleeMate.Common/Periods/seq_of_years.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/PayrolleeMate.Common/Periods/span_of_months.rb" afterPath="$PROJECT_DIR$/lib/PayrolleeMate.Common/Periods/span_of_months.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/PayrolleeMate.Common/Periods/span_of_years.rb" afterPath="$PROJECT_DIR$/lib/PayrolleeMate.Common/Periods/span_of_years.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -74,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="span_of_years.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="span_of_years.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/PayrolleeMate.Common/Periods/span_of_years.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+            <state vertical-scroll-proportion="-0.06973059">
+              <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -104,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="span_of_years_spec.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="span_of_years_spec.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/Periods/span_of_years_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.4738511">
-              <caret line="62" column="40" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -169,8 +161,8 @@
         <option value="$PROJECT_DIR$/lib/PayrolleeMate.rb" />
         <option value="$PROJECT_DIR$/lib/PayrolleeMate.Common/Periods/span_of_months.rb" />
         <option value="$PROJECT_DIR$/lib/PayrolleeMate.Common/Periods/seq_of_years.rb" />
-        <option value="$PROJECT_DIR$/lib/PayrolleeMate.Common/Periods/span_of_years.rb" />
         <option value="$PROJECT_DIR$/spec/Periods/span_of_years_spec.rb" />
+        <option value="$PROJECT_DIR$/lib/PayrolleeMate.Common/Periods/span_of_years.rb" />
       </list>
     </option>
   </component>
@@ -588,29 +580,35 @@
       <option name="project" value="LOCAL" />
       <updated>1441487607622</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="common.period and all spec">
+      <created>1442092413910</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1442092413910</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2048" height="1057" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998455" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32996973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33012512" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26171485" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26171485" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33501515" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33012512" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -629,7 +627,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="month_period and first spec" />
-    <option name="LAST_COMMIT_MESSAGE" value="month_period and first spec" />
+    <MESSAGE value="common.period and all spec" />
+    <option name="LAST_COMMIT_MESSAGE" value="common.period and all spec" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -981,10 +980,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/PayrolleeMate.Common/Periods/span_of_months.rb">
+    <entry file="file://$PROJECT_DIR$/spec/Periods/span_of_years_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -1005,18 +1004,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/PayrolleeMate.Common/Periods/span_of_years.rb">
+    <entry file="file://$PROJECT_DIR$/lib/PayrolleeMate.Common/Periods/span_of_months.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/Periods/span_of_years_spec.rb">
+    <entry file="file://$PROJECT_DIR$/lib/PayrolleeMate.Common/Periods/span_of_years.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4738511">
-          <caret line="62" column="40" selection-start-line="62" selection-start-column="40" selection-end-line="62" selection-end-column="40" />
+        <state vertical-scroll-proportion="-0.06973059">
+          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
           <folding />
         </state>
       </provider>
