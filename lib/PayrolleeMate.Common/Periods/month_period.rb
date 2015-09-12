@@ -1,9 +1,27 @@
+require 'date'
+
 module Payrollee_Common
 
   class MonthPeriod
     @@PRESENT = 0
 
     attr_reader :code
+
+    def self.empty
+      MonthPeriod.new(MonthPeriod::PRESENT)
+    end
+
+    def self.create_form_year_month(year, month)
+      MonthPeriod.new(year*100 + month)
+    end
+
+    def self.begin_year(year)
+      MonthPeriod.new(year*100 + 1)
+    end
+
+    def self.end_year(year)
+      MonthPeriod.new(year*100 + 12)
+    end
 
     def initialize(code)
       @code = code
@@ -15,6 +33,14 @@ module Payrollee_Common
 
     def <=>(other)
       @code <=> other.code
+    end
+
+    def <(other)
+      @code < other.code
+    end
+
+    def >(other)
+      @code > other.code
     end
 
     def eql?(other)
@@ -85,7 +111,7 @@ module Payrollee_Common
     def description
       first_period_day = begin_of_month
 
-      first_period_day.to_formatted_s(:month_name_and_year)
+      first_period_day.strftime('%B %Y')
     end
 
     def is_equal_to_period(other)
