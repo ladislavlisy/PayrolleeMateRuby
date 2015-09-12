@@ -3,12 +3,12 @@ require 'date'
 module Payrollee_Common
 
   class MonthPeriod
-    @@PRESENT = 0
+    PRESENT = 0
 
     attr_reader :code
 
     def self.empty
-      MonthPeriod.new(MonthPeriod::PRESENT)
+      MonthPeriod.new(PRESENT)
     end
 
     def self.create_form_year_month(year, month)
@@ -101,11 +101,9 @@ module Payrollee_Common
 
       period_date_cwd = date_period.cwday
 
-      if (period_date_cwd == 0)
-          7
-      else
-          period_date_cwd
-      end
+      return 7 if period_date_cwd == 0
+
+      period_date_cwd
     end
 
     def description
