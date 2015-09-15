@@ -54,14 +54,9 @@ module Payrollee_Common
     end
 
     def hash
-      prime = 31
-      result = super.hash
+      result = @year_from.hash
 
-      result += prime * result + @year_from.hash
-
-      result += prime * result + @year_upto.hash
-
-      result
+      result ^ @year_upto.hash
     end
 
     def class_name

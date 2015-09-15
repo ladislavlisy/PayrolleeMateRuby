@@ -4,8 +4,21 @@ module Payrollee_Common
 
   class MonthPeriod
     PRESENT = 0
+    WEEKSUN_SUNDAY = 0
+    WEEKMON_SUNDAY = 7
 
     attr_reader :code
+
+    def self.day_of_week_mon_to_sun(period_date_cwd)
+      # cwday Sunday = 0
+      # Monday = 1, Tuesday = 2, Wednesday = 3, Thursday = 4, Friday = 5, Saturday = 6
+
+      if period_date_cwd == WEEKSUN_SUNDAY
+        return WEEKMON_SUNDAY
+      else
+        period_date_cwd
+      end
+    end
 
     def self.empty
       MonthPeriod.new(PRESENT)
@@ -25,30 +38,6 @@ module Payrollee_Common
 
     def initialize(code)
       @code = code
-    end
-
-    def ==(other)
-      @code == other.code
-    end
-
-    def <=>(other)
-      @code <=> other.code
-    end
-
-    def <(other)
-      @code < other.code
-    end
-
-    def >(other)
-      @code > other.code
-    end
-
-    def eql?(other)
-      @code == other.code
-    end
-
-    def hash
-      code_int = @code.hash
     end
 
     def year
@@ -72,7 +61,7 @@ module Payrollee_Common
     end
 
     def days_in_month
-       Time.days_in_month(month_int, year_int)
+      Time.days_in_month(month_int, year_int)
     end
 
     def begin_of_month
@@ -92,18 +81,9 @@ module Payrollee_Common
     def week_day_of_month(day_ordinal)
       period_date = date_of_month(day_ordinal)
 
-      day_of_week_mon_to_sun(period_date)
-    end
+      period_date_cwd = period_date.cwday
 
-    def day_of_week_mon_to_sun(date_period)
-      # cwday Sunday = 0
-      # Monday = 1, Tuesday = 2, Wednesday = 3, Thursday = 4, Friday = 5, Saturday = 6
-
-      period_date_cwd = date_period.cwday
-
-      return 7 if period_date_cwd == 0
-
-      period_date_cwd
+      day_of_week_mon_to_sun(period_date_cwd)
     end
 
     def description
@@ -114,6 +94,30 @@ module Payrollee_Common
 
     def is_equal_to_period(other)
       @code == other.code
+    end
+
+    def ==(other)
+      @code == other.code
+    end
+
+    def <=>(other)
+      @code <=> other.code
+    end
+
+    def <(other)
+      @code < other.code
+    end
+
+    def >(other)
+      @code > other.code
+    end
+
+    def eql?(other)
+      @code == other.code
+    end
+
+    def hash
+      @code.hash
     end
 
     def to_s
