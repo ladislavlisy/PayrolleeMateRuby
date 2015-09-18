@@ -18,7 +18,7 @@ module Payrollee_Common
     end
 
     def is_equal_to_interval(other)
-      (@period_from == other.period_from && @period_upto == other.period_upto)
+      @period_from.is_equal_to_period(other.period_from) && @period_upto.is_equal_to_period(other.period_upto)
     end
 
     def ==(other)
@@ -26,27 +26,27 @@ module Payrollee_Common
     end
 
     def <=>(other)
-      if @period_from != other.period_from
-        return @period_from<=>(other.period_from)
+      if @period_from.is_equal_to_period(other.period_from)
+        return @period_upto<=>(other.period_upto)
       end
 
-      @period_upto<=>(other.period_upto)
+      return @period_from<=>(other.period_from)
     end
 
     def <(other)
-      if @period_from != other.period_from
-        return @period_from<=>(other.period_from)
+      if @period_from.is_equal_to_period(other.period_from)
+        return @period_upto<=>(other.period_upto)
       end
 
-      @period_upto<=>(other.period_upto)
+      return @period_from<=>(other.period_from)
     end
 
     def >(other)
-      if @period_from != other.period_from
-        return @period_from<=>(other.period_from)
+      if @period_from.is_equal_to_period(other.period_from)
+        return @period_upto<=>(other.period_upto)
       end
 
-      @period_upto<=>(other.period_upto)
+      return @period_from<=>(other.period_from)
     end
 
     def eql?(other)
@@ -60,12 +60,11 @@ module Payrollee_Common
     end
 
     def class_name
-      class_name = @period_from.to_s
-
-      if year_from != period_upto
-        class_name += "to#{@period_upto.to_s}"
+      if period_from.is_equal_to_period(period_upto)
+        class_name = @period_from.to_s
+      else
+        class_name = "#{@period_from.to_s}to#{@period_upto.to_s}"
       end
-      class_name
     end
 
     def to_s

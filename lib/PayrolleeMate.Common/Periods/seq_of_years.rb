@@ -4,77 +4,39 @@ module Payrollee_Common
     END_YEAR_ARRAY = 2100
     END_YEAR_INTER = 2099
 
+    def self.transform_zero_to_upto(year_upto)
+      year_upto == 0 ? END_YEAR_ARRAY : year_upto
+    end
+
+    def self.transform_years_to_spans(year_from, year_upto)
+      span_upto = transform_zero_to_upto(year_upto)
+      SpanOfYears.new(year_from, span_upto == year_from ? span_upto : span_upto - 1)
+    end
+
     def self.order_years(year1, year2)
-      comp_year1 = (year1==0 ? END_YEAR_ARRAY : year1)
-      comp_year2 = (year2==0 ? END_YEAR_ARRAY : year2)
+      comp_year1 = SeqOfYears.transform_zero_to_upto(year1)
+      comp_year2 = SeqOfYears.transform_zero_to_upto(year2)
       comp_year1<=>comp_year2
     end
 
     def initialize(years)
-        @milestones = years.sort {|a,b| SeqOfYears.order_years(a,b)}
+      sorted_years = years.sort {|a,b| SeqOfYears.order_years(a,b)}
+      begins_years = sorted_years.select {|x| x != 0}
+      finish_years = sorted_years.shift(1)
+      sorted_ziped = begins_years.zip(finish_years)
+      @milestones = sorted_ziped.map {|x| SeqOfYears.transform_years_to_spans(x.first, x.last)}
     end
 
-    def aggregate_for_period(agr, x, period)
-      int_from = agr.year_from
-      int_upto = agr.year_upto
-      int_year = x
-
-      if int_year == 0
-        int_year = END_YEAR_ARRAY
-      end
-
-      if period.year >= int_year
-        int_from = int_year
-      end
-
-      if period.year < int_year && int_upto == 0
-         int_upto = (int_year-1)
-      end
-
-      SpanOfYears.new(int_from, int_upto)
+    def select_for_period(span, period)
+      period.year >= span.year_from && period.year <= span.year_upto
     end
 
     def years_interval_for_period(period)
-      valid_span = @milestones.inject (SpanOfYears.new(0,0)) { |agr, x| aggregate_for_period(agr, x, period) }
-    end
-
-    def aggregate_to_array(agr, x)
-      first_part = agr.select {|x| x.year_upto != 0}
-
-      if agr.length == 0
-        first_part.concat( [SpanOfYears.new(x, 0)] )
-      else
-        last_part = agr.last
-
-        if x == 0
-          history_from = last_part.year_from
-          history_upto = END_YEAR_INTER
-
-          first_part.concat( [SpanOfYears.new(history_from, history_upto)] )
-        else
-          history_from = last_part.year_from
-          history_upto = [x-1, history_from].max
-
-          first_part.concat( [SpanOfYears.new(history_from, history_upto),SpanOfYears.new(x, 0)])
-        end
-      end
+      valid_span = @milestones.select { |span| select_for_period(span, period) }
     end
 
     def to_years_interval_array
-      history = @milestones.inject([]) { |agr, x|  aggregate_to_array(agr, x)}
-
-      last_part = history.last
-
-      if last_part.year_upto == 0
-        first_part = history.select {|x| x.year_upto != 0}
-
-        history_from = last_part.year_from
-        history_upto = last_part.year_from
-
-        first_part.concat( [SpanOfYears.new(history_from, history_upto)] )
-        return first_part
-      end
-      history
+      @milestones.dup
     end
   end
 
