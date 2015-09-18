@@ -22,7 +22,7 @@ module Payrollee_Common
     def initialize(years)
       sorted_years = years.sort {|a,b| SeqOfYears.order_years(a,b)}
       begins_years = sorted_years.select {|x| x != 0}
-      finish_years = sorted_years.shift(1)
+      finish_years = sorted_years.slice(1, sorted_years.length)
       sorted_ziped = begins_years.zip(finish_years)
       @milestones = sorted_ziped.map {|x| SeqOfYears.transform_years_to_spans(x.first, x.last)}
     end
@@ -33,6 +33,7 @@ module Payrollee_Common
 
     def years_interval_for_period(period)
       valid_span = @milestones.select { |span| select_for_period(span, period) }
+      valid_span.first || SpanOfYears.create_from_year(0)
     end
 
     def to_years_interval_array

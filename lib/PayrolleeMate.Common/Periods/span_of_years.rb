@@ -1,7 +1,7 @@
 module Payrollee_Common
 
   class SpanOfYears
-    def self.create_from_year(year)
+      def self.create_from_year(year)
         SpanOfYears.new(year, year)
     end
 
