@@ -9,7 +9,7 @@ module Payrollee_Common
     end
 
     def self.transform_years_to_spans(year_from, year_upto)
-      span_upto = transform_zero_to_upto(year_upto)
+      span_upto = SeqOfYears.transform_zero_to_upto(year_upto)
       SpanOfYears.new(year_from, span_upto == year_from ? span_upto : span_upto - 1)
     end
 

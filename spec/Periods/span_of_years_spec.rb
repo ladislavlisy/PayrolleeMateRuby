@@ -1,6 +1,8 @@
 require 'rspec'
 require_relative('../../lib/PayrolleeMate')
 
+include Payrollee_Common
+
 describe 'TestSpanOfYears' do
 
   it 'Should_Return_IntervalName_2013' do
