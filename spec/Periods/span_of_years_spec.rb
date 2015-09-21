@@ -29,7 +29,7 @@ describe 'TestSpanOfYears' do
         SpanOfYears.new(2016, 2016),
         SpanOfYears.new(2017, 2099)
     ]
-    test_year_array = test_span_years.to_years_interval_array
+    test_year_array = test_span_years.years_interval_array
 
     expect(exps_year_array).to eq(test_year_array)
   end

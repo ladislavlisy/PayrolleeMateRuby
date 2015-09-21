@@ -8,15 +8,16 @@ module Payrollee_Common
       year_upto == 0 ? END_YEAR_ARRAY : year_upto
     end
 
-    def self.transform_years_to_spans(year_from, year_upto)
-      span_upto = SeqOfYears.transform_zero_to_upto(year_upto)
-      SpanOfYears.new(year_from, span_upto == year_from ? span_upto : span_upto - 1)
-    end
-
     def self.order_years(year1, year2)
       comp_year1 = SeqOfYears.transform_zero_to_upto(year1)
       comp_year2 = SeqOfYears.transform_zero_to_upto(year2)
       comp_year1<=>comp_year2
+    end
+
+    def self.transform_years_to_spans(year_from, year_upto)
+      tran_upto = SeqOfYears.transform_zero_to_upto(year_upto)
+      span_upto = (tran_upto == year_from ? tran_upto : tran_upto - 1)
+      SpanOfYears.new(year_from, span_upto)
     end
 
     def initialize(years)
@@ -36,7 +37,7 @@ module Payrollee_Common
       valid_span.first || SpanOfYears.create_from_year(0)
     end
 
-    def to_years_interval_array
+    def years_interval_array
       @milestones.dup
     end
   end
