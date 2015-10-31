@@ -22,8 +22,10 @@ module Payrollee_Common
 
     def initialize(years)
       sorted_years = years.sort {|a,b| SeqOfYears.order_years(a,b)}
-      begins_years = sorted_years.select {|x| x != 0}
-      finish_years = sorted_years.slice(1, sorted_years.length)
+      begins_count = [0, sorted_years.length-1].max
+      begins_years = sorted_years.slice(0, begins_count)
+      finish_count = [0, sorted_years.length-1].max
+      finish_years = sorted_years.slice(1, finish_count)
       sorted_ziped = begins_years.zip(finish_years)
       @milestones = sorted_ziped.map {|x| SeqOfYears.transform_years_to_spans(x.first, x.last)}
     end
